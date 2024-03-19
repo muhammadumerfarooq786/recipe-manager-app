@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/homepage.css" />
+    <title>Recipe Network - Home</title>
+  </head>
+  <body>
+    <%- include('header') %> <% if (userSession) {%>
+    <div
+      class="logged-in-as"
+      style="
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      "
+    >
+      <span> Welcome <%= userSession.username %> ! </span>
+    </div>
+    <% } %>
+
+    <div class="container">
+      <div class="search-bar">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search For Recipe By Name or Ingredients"
+          class="search-input"
+        />
+        <button
+          id="searchButton"
+          onclick="searchRecipes()"
+          class="search-button"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+
+    <div id="norecipe" class="recipe-list">
+      <!-- Recipe cards will be dynamically added here -->
+    </div>
+    <div id="recipeList" class="recipe-list">
+      <!-- Recipe cards will be dynamically added here -->
+    </div>
+
+    <script src="./js/homepage.js"></script>
+  </body>
+</html>

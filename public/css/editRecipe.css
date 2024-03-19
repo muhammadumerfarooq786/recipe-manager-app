@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff; /* White container background */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+button {
+  padding: 12px;
+  background-color: #4caf50; /* Green button */
+  color: #fff;
+  border: none;
+  align-items: center;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

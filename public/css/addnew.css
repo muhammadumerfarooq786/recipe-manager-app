@@ -1,0 +1,72 @@
+/* addnew.css */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5; /* Light gray background */
+}
+.header {
+  background-color: #2ecc71;
+  padding: 15px 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff; /* White container background */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Specific styles for input within .form-group in addnew.css */
+.form-group input {
+  padding: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+button {
+  padding: 12px;
+  background-color: #4caf50; /* Green button */
+  color: #fff;
+  border: none;
+  align-items: center;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Specific styles for input, select, textarea in addnew.css */
+input,
+textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+textarea {
+  height: 150px; /* Set minimum height for instructions */
+  width: 100%;
+}

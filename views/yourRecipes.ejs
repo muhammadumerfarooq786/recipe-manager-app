@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/yourRecipes.css" />
+    <title>Your Recipes - Recipe Network</title>
+    <% if (userSession) { %>
+    <!-- Add this hidden div to store user ID -->
+    <div id="userIdContainer" style="display: none">
+      <%= userSession.userId %>
+    </div>
+    <% } %>
+  </head>
+  <body>
+    <% if (!userSession) { %>
+    <script>
+      alert("Please log in first.");
+      window.location.href = "/login";
+    </script>
+    <% } else { %> <%- include('header') %>
+    <div class="header">
+      <button onclick="window.location.href='/add_new'">Add New Recipe</button>
+    </div>
+
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Ingredients</th>
+            <th>Instructions</th>
+            <th>Category</th>
+            <th>Updated At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="recipeTableBody">
+          <!-- Recipe rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- <script src="./js/yourRecipes.js"></script> -->
+    <script src="./js/yourRecipes.js"></script>
+    <% } %>
+  </body>
+</html>

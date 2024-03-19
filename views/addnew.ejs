@@ -1,0 +1,87 @@
+<!-- addnew.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/addnew.css" />
+    <title>Add New Recipe - Recipe Network</title>
+    <% if (userSession) { %>
+    <!-- Add this hidden div to store user ID -->
+    <div id="userIdContainer" style="display: none">
+      <%= userSession.userId %>
+    </div>
+    <% } %>
+  </head>
+  <body>
+    <% if (!userSession) { %>
+    <script>
+      alert("Please log in first.");
+      window.location.href = "/login";
+    </script>
+    <% } else { %>
+    <div class="header">
+      <a href="/">Homepage</a>
+    </div>
+    <div class="container">
+      <form id="recipeForm">
+        <div class="form-group">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Recipe Name"
+            required
+          />
+        </div>
+
+        <div class="form-group" id="ingredientsContainer">
+          <div class="ingredient-row">
+            <input
+              type="text"
+              class="ingredient-name"
+              placeholder="Ingredient Name"
+              required
+            />
+            <input
+              type="text"
+              class="ingredient-quantity"
+              placeholder="Quantity (grams)"
+              required
+            />
+          </div>
+          <!-- Additional ingredient rows will be dynamically added here -->
+        </div>
+
+        <button type="button" class="addmore" onclick="addIngredient()">
+          Add More
+        </button>
+        <br />
+        <div class="form-group">
+          <textarea
+            id="instructions"
+            name="instructions"
+            placeholder="Intructions"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <select id="category">
+            <option value="breakfast" selected>Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+          </select>
+        </div>
+
+        <button type="button" class="addsubmit" onclick="submitRecipe()">
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <script src="./js/addnew.js"></script>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <title>Recipe Network</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="/">Recipe Network</a>
+        </div>
+        <nav>
+          <ul class="nav-list">
+            <li><a href="/">Home</a></li>
+            <% if (userSession) {%>
+            <li><a href="/your_recipes">Your Recipes</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <% } else { %>
+            <li><a href="/login">Login</a></li>
+            <% } %>
+          </ul>
+          <div class="burger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <script src="./js/header.js"></script>
+  </body>
+</html>

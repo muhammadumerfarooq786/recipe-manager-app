@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/editRecipe.css" />
+    <title>Edit Recipe - Recipe Network</title>
+  </head>
+  <body>
+    <% if (!userSession) { %>
+    <script>
+      alert("Please log in first.");
+      window.location.href = "/login";
+    </script>
+    <% } else { %>
+    <div class="container">
+      <h2>Edit Recipe</h2>
+      <div id="recipeDetails">
+        <!-- Recipe details will be dynamically added here -->
+        <label for="name">Recipe Name:</label>
+        <input type="text" id="name" />
+
+        <div id="ingredients">
+          <!-- Ingredients will be dynamically added here -->
+        </div>
+
+        <label for="instructions">Instructions:</label>
+        <textarea id="instructions"></textarea>
+
+        <label for="category">Category:</label>
+        <select id="category">
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+        </select>
+      </div>
+
+      <button onclick="saveChanges()">Save Changes</button>
+    </div>
+
+    <script src="./js/editRecipe.js"></script>
+    <% } %>
+  </body>
+</html>

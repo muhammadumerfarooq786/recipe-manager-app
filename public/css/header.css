@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  background-color: #2ecc71; /* Greenish color */
+  color: #fff;
+  padding: 15px 20px; /* Added padding */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.nav-list li {
+  margin-right: 20px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
+    flex-direction: column; /* Display the menu items in a column for smaller screens */
+    position: absolute;
+    top: 65px; /* Adjust the top position as needed */
+    left: 0;
+    background-color: #2ecc71; /* Greenish color */
+    width: 100%;
+    padding: 20px; /* Added padding */
+    box-sizing: border-box;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+}
